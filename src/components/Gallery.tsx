@@ -1,18 +1,29 @@
 import { motion } from "framer-motion";
-import  Photo5  from "@/assets/Photo5.jpg";
-import Photo1 from "@/assets/Photo1.jpg";
-import Photo2 from "@/assets/Photo2.jpg";
-import Photo3 from "@/assets/Photo3.jpg";
-import Photo4 from "@/assets/Photo4.jpg";
-import Photo6 from "@/assets/Photo6.jpg";
+import  Image1  from "@/assets/Image1.jpeg";
+import Image2 from "@/assets/Image2.jpeg";
+import Image3 from "@/assets/Image3.jpeg";
+import Image4 from "@/assets/Image4.jpeg";
+import Image5 from "@/assets/Image5.jpeg";
+import Image6 from "@/assets/Image6.jpeg";
+import Image7 from "@/assets/Image7.jpeg";
+import Image8 from "@/assets/Image8.jpeg";
+import Image9 from "@/assets/Image9.jpeg";
+import Image10 from "@/assets/Image10.jpeg";
+import Image11 from "@/assets/Image11.jpeg";
 
 const images = [
-  { src: Photo5, title: "Raila Odinga", category: "Amphitheatre" },
-  { src: Photo1, title: "Geometric Silence", category: "Mbita View" },
-  { src: Photo2, title: "Bay Hills", category: "Far View" },
-  { src: Photo3, title: "Lake Victoria", category: "Lake Golden Rays" },
-  { src: Photo4, title: "Morning", category: "Residential House" },
-  { src: Photo6, title: "Rusinga Lodge", category: "Palm Tree" },
+  { src: Image1, title: "@150", category: "Gardenshoot" },
+  { src: Image2, title: "@100", category: "Outdoor" },
+  { src: Image3, title: "@100", category: "Outdoor" },
+  { src: Image4, title: "@200", category: "Indoor" },
+  { src: Image5, title: "@100", category: "Outdoor" },
+  { src: Image6, title: "@200", category: "Indoor" },
+  { src: Image7, title: "@100", category: "Outdoor" },
+  { src: Image8, title: "@150", category: "Gardenshoot" },
+  { src: Image9, title: "@150", category: "Gardenshoot" },
+  { src: Image10, title: "@100", category: "Outdoor" },
+  { src: Image11, title: "@100", category: "Sandy Waves" },
+
 ];
 
 const containerVariants = {
