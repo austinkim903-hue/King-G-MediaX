@@ -34,17 +34,21 @@ const About = () => {
             </div>
 
             <div className="mt-10">
-              <p className="text-sm font-light uppercase letter-spacing-wider text-muted-foreground mb-4">
-                Services
+              <p className="font-serif text-4xl md:text-5xl font-light text-foreground mb-8">
+                Our Services
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
                   "Photography",
                   "Videography",
+                  "Event Coverage",
                   "Mounting",
                   "Logo Design",
                   "Poster Design",
-                  "Retouching"
+                  "Retouching",
+                  "Drone Services",
+                  "Graphic Design",
+                  "Video Editing"
                 ].map((service) => (
                   <span
                     key={service}

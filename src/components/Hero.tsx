@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-photography.jpg";
+import heroImage from "@/assets/BackImage.jpeg";
 
 const Hero = () => {
   return (
@@ -19,17 +19,18 @@ const Hero = () => {
         <div className="hero-overlay absolute inset-0" />
       </motion.div>
 
+      {/* Welcome Text - Top */}
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute top-32 left-0 right-0 z-10 text-center font-serif text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground"
+      >
+        WELCOME TO
+      </motion.h2>
+
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-4 text-sm font-light uppercase letter-spacing-wider text-muted-foreground"
-        >
-          Visual Storytelling
-        </motion.p>
-        
+      <div className="relative z-10 flex h-full flex-col items-center justify-end pb-12 px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
