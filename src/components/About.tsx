@@ -33,35 +33,8 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-10">
-              <p className="font-serif text-4xl md:text-5xl font-light text-foreground mb-8">
-              
-                Our Services
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Photography",
-                  "Videography",
-                  "Event Coverage",
-                  "Mounting",
-                  "Logo Design",
-                  "Poster Design",
-                  "Retouching",
-                  "Drone Services",
-                  "Graphic Design",
-                  "Video Editing"
-                ].map((service) => (
-                  <span
-                    key={service}
-                    className="border border-muted-foreground/30 px-4 py-2 text-sm font-light text-foreground"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            </div>
           </motion.div>
-
+          
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
