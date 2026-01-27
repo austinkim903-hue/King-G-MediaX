@@ -10,6 +10,7 @@ import Image8 from "@/assets/Image8.jpeg";
 import Image9 from "@/assets/Image9.jpeg";
 import Image10 from "@/assets/Image10.jpeg";
 import Image11 from "@/assets/Image11.jpeg";
+import Image12 from "@/assets/Image12.jpeg";
 
 const images = [
   { src: Image1, title: "@150", category: "Gardenshoot" },
@@ -23,6 +24,7 @@ const images = [
   { src: Image9, title: "@150", category: "Gardenshoot" },
   { src: Image10, title: "@100", category: "Outdoor" },
   { src: Image11, title: "@100", category: "Sandy Waves" },
+  { src: Image12, title: "@850", category: "Mounting" },
 
 ];
 
