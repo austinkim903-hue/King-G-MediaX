@@ -1,8 +1,30 @@
 import { motion } from "framer-motion";
-import { Camera, Video, Calendar, Frame, Pencil, FileImage, Wand2, Plane, Palette, Film, Code } from "lucide-react";
+import { Camera, Video, Calendar, Frame, Pencil, FileImage, Wand2, Plane, Palette, Film, Code, MessageCircle } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Pricing = () => {
+  const phoneNumber = "254724477064";
+
+  const sendToWhatsApp = (serviceTitle: string, packageName: string, description: string, price: string) => {
+    const message = `Hi King G Media! 👋\n\nI'm interested in your *${serviceTitle}* service:\n\n📦 *Package:* ${packageName}\n📝 *Details:* ${description}\n💰 *Price:* ${price}\n\nPlease let me know more details. Thank you!`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const sendExtraToWhatsApp = (serviceTitle: string, extraName: string, price: string) => {
+    const message = `Hi King G Media! 👋\n\nI'm interested in your *${serviceTitle}* service:\n\n📸 *Service:* ${extraName}\n💰 *Price:* ${price}\n\nPlease let me know more details. Thank you!`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const sendMountingToWhatsApp = (mountingType: string, size: string, price: string) => {
+    const message = `Hi King G Media! 👋\n\nI'm interested in your *Mounting* service:\n\n🖼️ *Type:* ${mountingType}\n📐 *Size:* ${size}\n💰 *Price:* ${price}\n\nPlease let me know more details. Thank you!`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
   const services = [
     {
       id: "photography",
@@ -199,23 +221,29 @@ const Pricing = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {service.packages.map((pkg, index) => (
-                    <motion.div
+                    <motion.button
                       key={pkg.name}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="border border-muted-foreground/30 p-8 hover:border-primary transition-colors"
+                      onClick={() => sendToWhatsApp(service.title, pkg.name, pkg.description, pkg.price || "Contact for pricing")}
+                      className="border border-muted-foreground/30 p-8 hover:border-primary transition-colors text-left group cursor-pointer"
                     >
-                      <h3 className="font-serif text-xl text-foreground mb-2">{pkg.name}</h3>
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="font-serif text-xl text-foreground">{pkg.name}</h3>
+                        <MessageCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
                       <p className="text-muted-foreground font-light text-sm mb-4">{pkg.description}</p>
                       {pkg.price && (
                         <p className="font-serif text-2xl text-primary">{pkg.price}</p>
                       )}
-                    </motion.div>
+                      <p className="text-xs text-muted-foreground mt-3 group-hover:text-primary transition-colors">
+                        Click to inquire via WhatsApp
+                      </p>
+                    </motion.button>
                   ))}
                 </div>
 
-                {/* Mounting Tables */}
                 {service.tables && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                     {service.tables.map((table) => (
@@ -223,10 +251,17 @@ const Pricing = () => {
                         <h4 className="font-serif text-lg text-foreground mb-4">{table.title}</h4>
                         <div className="space-y-2">
                           {table.items.map((item) => (
-                            <div key={item.size} className="flex justify-between items-center py-2 border-b border-muted-foreground/10">
+                            <button
+                              key={item.size}
+                              onClick={() => sendMountingToWhatsApp(table.title, item.size, item.price)}
+                              className="flex justify-between items-center py-2 border-b border-muted-foreground/10 w-full hover:bg-muted/50 transition-colors group cursor-pointer"
+                            >
                               <span className="text-muted-foreground font-light">{item.size}</span>
-                              <span className="text-foreground">{item.price}</span>
-                            </div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-foreground">{item.price}</span>
+                                <MessageCircle className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all" />
+                              </div>
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -234,19 +269,20 @@ const Pricing = () => {
                   </div>
                 )}
 
-                {/* Extra Services */}
                 {service.extras && (
                   <div className="mt-8">
                     <h4 className="font-serif text-xl text-foreground mb-6 text-center">Individual Shoots</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                       {service.extras.map((extra) => (
-                        <div
+                        <button
                           key={extra.name}
-                          className="border border-muted-foreground/30 p-4 text-center hover:border-primary transition-colors"
+                          onClick={() => sendExtraToWhatsApp(service.title, extra.name, extra.price)}
+                          className="border border-muted-foreground/30 p-4 text-center hover:border-primary transition-colors cursor-pointer group"
                         >
                           <p className="text-sm text-foreground mb-1">{extra.name}</p>
                           <p className="text-primary font-light text-sm">{extra.price}</p>
-                        </div>
+                          <MessageCircle className="w-4 h-4 text-muted-foreground mx-auto mt-2 opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all" />
+                        </button>
                       ))}
                     </div>
                   </div>
