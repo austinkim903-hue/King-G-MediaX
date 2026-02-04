@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import  Image1  from "@/assets/Image1.jpeg";
-import Image2 from "@/assets/Image2.jpeg";
+import Imagey from "@/assets/Imagey.jpeg";  
 import Image3 from "@/assets/Image3.jpeg";
 import Image4 from "@/assets/Image4.jpeg";
 import Image5 from "@/assets/Image5.jpeg";
@@ -14,7 +14,7 @@ import Image12 from "@/assets/Image12.jpeg";
 
 const images = [
   { src: Image1, title: "@150", category: "Gardenshoot" },
-  { src: Image2, title: "@100", category: "Outdoor" },
+  { src: Imagey, title: "@150", category: "Gardenshoot" },
   { src: Image3, title: "@100", category: "Outdoor" },
   { src: Image4, title: "@200", category: "Indoor" },
   { src: Image5, title: "@100", category: "Outdoor" },
