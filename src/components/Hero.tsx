@@ -46,7 +46,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-6 max-w-md text-base font-light text-muted-foreground"
         >
-          Professional photography capturing moments that tell your story
+          Professional photography and videography capturing moments that tell your story
         </motion.p>
 
         <motion.a

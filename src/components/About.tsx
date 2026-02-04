@@ -19,7 +19,7 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-muted-foreground font-light leading-relaxed">
               <p>
-                Photography is more than capturing images—it's about distilling emotion, 
+                Photography and Videography is more than capturing images and moments—it's about distilling emotion, 
                 freezing time, and revealing the extraordinary within the ordinary.
               </p>
               <p>
